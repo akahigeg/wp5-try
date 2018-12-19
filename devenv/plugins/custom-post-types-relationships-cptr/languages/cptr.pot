@@ -1,0 +1,273 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Custom Post Types Relationships (CPTR)\n"
+"POT-Creation-Date: 2017-10-31 20:10+0200\n"
+"PO-Revision-Date: 2016-08-29 19:22+0300\n"
+"Last-Translator: Anastis Sourgoutsidis <anastis@cssigniter.com>\n"
+"Language-Team: Anastis Sourgoutsidis <anastis@cssigniter.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: cptr.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: cptr.php:82
+msgid "CSSIgniter Custom Post Types Relationships Options"
+msgstr ""
+
+#: cptr.php:82
+msgid "Custom Post Types Relationships"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: cptr.php:98 cptr.php:130
+msgid "Custom Post Types Relationships (CPTR)"
+msgstr ""
+
+#: cptr.php:158
+msgctxt "\"Add\" button text"
+msgid "Add"
+msgstr ""
+
+#: cptr.php:159
+msgctxt "\"Added\" button text"
+msgid "Added"
+msgstr ""
+
+#: cptr.php:160
+msgctxt "\"Remove\" button text"
+msgid "Remove"
+msgstr ""
+
+#: cptr.php:161
+msgid "This post is already in your list"
+msgstr ""
+
+#: cptr.php:202
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "All"
+msgstr ""
+
+#: cptr.php:203
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "items from"
+msgstr ""
+
+#: cptr.php:213
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "ordered by"
+msgstr ""
+
+#: cptr.php:216
+msgctxt "e.g. All items from Posts ordered by Title in Descending order"
+msgid "Title"
+msgstr ""
+
+#: cptr.php:217
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "Date"
+msgstr ""
+
+#: cptr.php:220
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "in"
+msgstr ""
+
+#: cptr.php:223
+msgctxt "e.g. All items from Posts ordered by Date in Ascending order"
+msgid "Ascending"
+msgstr ""
+
+#: cptr.php:224
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "Descending"
+msgstr ""
+
+#: cptr.php:225
+msgctxt "e.g. All items from Posts ordered by Date in Descending order"
+msgid "order"
+msgstr ""
+
+#: cptr.php:226
+msgid "Filter:"
+msgstr ""
+
+#: cptr.php:228
+msgid "Search"
+msgstr ""
+
+#: cptr.php:232
+msgid "Available Posts"
+msgstr ""
+
+#: cptr.php:234
+msgid "Search results will appear here"
+msgstr ""
+
+#: cptr.php:237
+msgid "Related Posts (Drag to reorder)"
+msgstr ""
+
+#: cptr.php:247
+msgid "Remove"
+msgstr ""
+
+#: cptr.php:291
+msgid "Add"
+msgstr ""
+
+#: cptr.php:298
+msgid "This category is empty"
+msgstr ""
+
+#: cptr.php:570
+msgid "Settings"
+msgstr ""
+
+#: generic.php:149
+#, php-format
+msgid ""
+"Function %1$s is <strong>deprecated</strong> since CPTR version %2$s! Use "
+"%3$s instead."
+msgstr ""
+
+#: generic.php:151
+#, php-format
+msgid ""
+"Function %1$s is <strong>deprecated</strong> since CPTR version %2$s with "
+"no alternative available."
+msgstr ""
+
+#: generic.php:157
+#, php-format
+msgid ""
+"The signature of the function %1$s has changed and the current usage has "
+"been <strong>deprecated</strong> since CPTR version %2$s. Please consult "
+"the documentation for up to date usage instructions."
+msgstr ""
+
+#: panel.php:7
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: panel.php:11
+msgid "CSSIgniter Custom Post Types Relationships"
+msgstr ""
+
+#: panel.php:12
+msgid ""
+"In this page you can define general options for the Custom Post Types "
+"Relationships plugin. All options here can be overridden manually by "
+"passing the appropriate parameters to the shortcode or the theme function. "
+"If you find yourself making changes here that don't have any effect, it's "
+"because your WordPress theme has hardcoded options for you, so check with "
+"the theme's developer."
+msgstr ""
+
+#: panel.php:13
+#, php-format
+msgid ""
+"For complete usage instructions, please visit the <a href=\"%s\">plugin's "
+"homepage</a>."
+msgstr ""
+
+#: panel.php:25
+msgid "Max number of displayed related posts:"
+msgstr ""
+
+#: panel.php:28
+msgid "Set to 0 for no limit."
+msgstr ""
+
+#: panel.php:33
+msgid "Show the excerpt for each post?"
+msgstr ""
+
+#: panel.php:40
+msgid "How many words the excerpt should be?"
+msgstr ""
+
+#: panel.php:47
+msgid "Display the thumbnail?"
+msgstr ""
+
+#: panel.php:50
+msgid ""
+"The thumbnail will be displayed after the title and before the excerpt."
+msgstr ""
+
+#: panel.php:55
+msgid "Thumbnail size"
+msgstr ""
+
+#: panel.php:57
+msgid "Width"
+msgstr ""
+
+#: panel.php:59
+msgid "Height"
+msgstr ""
+
+#: panel.php:65
+msgid "Display Options"
+msgstr ""
+
+#: panel.php:72
+msgid "Metabox title"
+msgstr ""
+
+#: panel.php:75
+msgid ""
+"This is the title of the metabox that the users will see while in the post "
+"edit screens."
+msgstr ""
+
+#: panel.php:80
+msgid "Allowed roles"
+msgstr ""
+
+#: panel.php:82
+msgid ""
+"Select the roles that will have access to the plugin (i.e. can create/"
+"delete relationships)."
+msgstr ""
+
+#: panel.php:90
+msgid "Allowed post types"
+msgstr ""
+
+#: panel.php:92
+msgid "Select the post types that the plugin will be available to."
+msgstr ""
+
+#: panel.php:102
+msgid "Save Changes"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.cssigniter.com/ignite/custom-post-types-relationships/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"An easy way to create relationships between posts, pages, and custom post "
+"types in WordPress"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "The CSSIgniter Team"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.cssigniter.com/"
+msgstr ""

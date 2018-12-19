@@ -1,0 +1,46 @@
+version: "3.3"
+services:
+    wordpress:
+        container_name: wordpress
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "8888:80"
+        depends_on:
+            - db
+        environment:
+            WORDPRESS_DB_HOST: "db:3306"
+        env_file: .env
+        volumes:
+            - ./src:/var/www/html/wp-content/themes/my-theme
+            - ./devenv/plugins:/var/www/html/wp-content/plugins
+            - ./devenv/languages:/var/www/html/wp-content/languages
+            - ./tmp/wp-content-uploads:/var/www/html/wp-content/uploads
+            - ./tmp/http-log:/var/log/apache2
+    db:
+        image: mysql:5.6
+        env_file: .env
+        volumes:
+            - db-data:/var/lib/mysql
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        env_file: .env
+        links:
+            - db
+        ports:
+             - 8080:80
+        volumes:
+             - ./tmp/phpmyadmin-sessions:/sessions
+
+    smtp:
+        image: schickling/mailcatcher
+        container_name: smtp
+        env_file: .env
+        ports:
+             - 1080:1080
+             - 1025:1025
+volumes:
+    db-data:
+        driver: local
+

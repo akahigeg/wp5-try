@@ -1,0 +1,11 @@
+tmp
+.DS_Store
+.php_cs.cache
+plugins/hello.php
+devenv/plugins/hello.php
+devenv/languages/plugins/hello-dolly-ja.mo
+devenv/languages/plugins/hello-dolly-ja.po
+*.code-workspace
+*.log
+trash
+*.mp4
