@@ -1,0 +1,243 @@
+post:
+  custom_fields:
+    - field1:
+        label: FIELD1
+        unique: true
+        input: text
+        size: 20
+  taxonomies:
+    - post_additional_tag:
+        hierarchical: false
+        public: true
+        show_ui: true
+        label: SomePostTag
+  columns_on_manage_screen:
+    show:
+      - field1:
+          label: F1
+    hide:
+      - author
+  sortable_columns:
+    - tags
+page:
+  custom_fields:
+    - field1:
+        label: FIELD1
+        unique: true
+        input: text
+        size: 20
+  columns_on_manage_screen:
+    show:
+      - field1:
+          label: F1
+    hide:
+      - author
+some_post:
+  register_options:
+    labels:
+      name: Some Post
+    public: true
+    show_in_rest: true
+    has_archive: true
+    supports: [title, editor]
+  taxonomies:
+    - common_tag:
+        hierarchical: false
+        public: true
+        show_ui: true
+        show_in_rest: true
+        label: CommonTag
+    - some_post_category:
+        hierarchical: true
+        public: true
+        show_ui: true
+        label: CategoryA
+        custom_fields:
+          - field1:
+              label: FIELD1
+              unique: true
+              input: text
+              size: 20
+              description: "this is ok."
+          - image1:
+              label: IMAGE1
+              unique: true
+              input: image
+              size: 40
+    - some_post_cat_second:
+        hierarchical: true
+        public: true
+        show_ui: true
+        label: CategoryB
+        custom_fields:
+          - radio1:
+              label: Radio1
+              input: radio
+              values:
+                - cat
+                - dog
+                - monkey
+  custom_fields:
+    - reference1:
+        label: ANOTHER POST
+        input: reference
+        multiple: true
+        reference_query_options: 
+          post_type: another_post
+          orderby: date
+          order: asc
+        description: select another posts.
+    - field1:
+        label: FIELD1
+        label_class: your-theme-admin-form-label
+        class: your-theme-admin-form-text
+        style: "background-color: blue;"
+        input: text
+        size: 20
+        placeholder: input your field1
+        description: this is a note.
+    - field2:
+        label: FIELD2
+        input: text
+        rendering_function: spt_example_rendering_func
+    - field3:
+        label: FIELD3
+        input: text
+        save_function: spt_example_save_func
+    - cb1:
+        label: CheckBox1
+        unique: false
+        input: checkbox
+        values:
+          - apple
+          - orange
+          - banana
+        description: checkboxes description.
+    - cb2:
+        label: CheckBox2
+        input: checkbox
+        values: 
+          - 1: I Agree
+    - cb3:
+        label: CheckBox3
+        input: checkbox
+        default:
+          - red
+        values:
+          - red: RED
+          - green: GREEN
+    - radio1:
+        label: Radio1
+        input: radio
+        values:
+          - cat
+          - dog
+          - monkey
+        description: radios.
+    - radio2:
+        label: Radio2
+        input: radio
+        default: fish
+        values:
+          - bird
+          - fish
+          - snake
+    - radio3:
+        label: Radio3
+        input: radio
+        default: B
+        values:
+          - A: Ape
+          - B: Bird
+    - field5:
+        label: FIELD5
+        input: textarea
+        rows: 8
+        cols: 60
+        default: "DEFAULT5!"
+        description: a textarea.
+    - field6:
+        label: FIELD6
+        input: select
+        default:
+          - B
+        values:
+          - A
+          - B
+          - C
+    - field7:
+        label: FIELD7
+        input: select
+        values:
+          - A: A TYPE
+          - B: B TYPE
+          - C: C TYPE
+    - field8:
+        label: FIELD8
+        input: select
+        size: 6
+        width: 80
+        multiple: true
+        default:
+          - B
+          - C
+        values:
+          - A: A TYPE
+          - B: B TYPE
+          - C: C TYPE
+          - D: D TYPE
+          - E: E TYPE
+          - F: F TYPE
+        description: a multiple select.
+    - image1:
+        label: IMAGE1
+        unique: true
+        input: image
+        size: 40
+        before: "<hr>"
+        after: "<hr>"
+        description: image.
+    - image2:
+        label: IMAGE2
+        unique: true
+        input: image
+        size: 40
+  columns_on_manage_screen:
+    show:
+      - field1:
+          label: FIELD1
+      - some_post_category:
+          label: SPCat
+  sortable_columns:
+    - field1
+  meta_boxes:
+    - box1:
+        label: META BOX 1
+        context: side 
+        fields:
+          - field1
+          - field2
+    - box2:
+        label: META BOX 2
+        context: normal
+        fields:
+          - radio1
+          - radio2
+          - radio3
+    - box3:
+        label: META BOX 3
+        context: normal
+        rendering_function: spt_example_rendering_meta_box_func
+        priority: high
+        fields:
+          - field3
+another_post:
+  register_options:
+    labels:
+      name: Another Post
+    public: true
+    show_in_rest: true
+    has_archive: true
+    hierarchical: true
+  taxonomies:
+    - common_tag:

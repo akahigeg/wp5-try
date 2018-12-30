@@ -1,0 +1,604 @@
+post:
+  custom_fields:
+    - lead:
+        label: サブタイトル
+        input: text
+        size: 80
+        style: "margin-left: 36px;"
+  taxonomies:
+    - custom_tag:
+        hierarchical: false
+        public: true
+        show_ui: true
+        label: カスタムタグ
+news:
+  register_options:
+    labels:
+      name: ニュース
+      add_new_item: ニュースを追加
+      edit_item: ニュースを編集
+    public: true
+    show_in_rest: true
+    has_archive: true
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+  taxonomies:
+    - common_tag:
+        hierarchical: false
+        public: true
+        show_ui: true
+        label: タグ
+  custom_fields:
+    - lead:
+        label: サブタイトル
+        input: text
+        size: 80
+        style: "margin-left: 36px;"
+    - person_ids:
+        label: 人物プロフィール
+        input: text
+        size: 40
+        style: "margin-left: 10px;"
+    - related_book_id:
+        label: 関連書籍
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - ssdb_link:
+        label: 'SSDBに関連記事として'
+        input: radio
+        default: 1
+        values:
+          - 1: 登録する
+          - 0: 登録しない
+  meta_boxes:
+    - news_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - lead
+          - person_ids
+          - related_book_id
+    - news_ssdb:
+        label: SSDB設定
+        context: normal
+        priority: low
+        fields:
+          - ssdb_link
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+      - post_approved:
+          label: 承認状態
+          display_values:
+            default: 未承認
+            1: 承認
+    hide:
+      - categories
+      - comments
+column:
+  register_options:
+    labels:
+      name: 連載
+      add_new_item: 連載を追加
+      edit_item: 連載を編集
+    public: true
+    has_archive: true
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+  taxonomies:
+    - common_tag
+    - column_category:
+        hierarchical: true
+        public: true
+        show_ui: true
+        label: 連載シリーズ
+        qeury_var: true
+        rewrite:
+          slug: cc
+        custom_fields:
+          - short_name:
+              label: 短縮タイトル（ニュースの一覧でアイコンとして表示）
+              input: text
+          - header_banner:
+              label: ヘッダーバナー
+              input: image
+          - mid_banner:
+              label: 一覧バナー
+              input: image
+          - top_eye_catch:
+              label: トップページ アイキャッチ
+              input: image
+          - side_eye_catch:
+              label: サイドバー アイキャッチ
+              input: image
+          - latest_post_date:
+              label: 最終更新日時（配下のインタビュー記事が更新されたタイミングで自動更新）
+              input: text
+  custom_fields:
+    - number:
+        label: 回数の表示
+        input: text
+        size: 10
+        style: "margin-left: 50px;"
+    - lead:
+        label: サブタイトル
+        input: text
+        size: 120
+        style: "margin-left: 36px;"
+    - person_ids:
+        label: 人物プロフィール
+        input: text
+        size: 40
+        style: "margin-left: 10px;"
+    - related_book_id:
+        label: 関連書籍
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - ssdb_link:
+        label: 'SSDBに関連記事として'
+        input: radio
+        default: 1
+        values:
+          - 1: 登録する
+          - 0: 登録しない
+  columns_on_manage_screen:
+    show:
+      - column_category:
+          label: 連載
+      - author:
+          label: 作成者
+      - post_approved:
+          label: 承認状態
+          display_values:
+            default: 未承認
+            1: 承認
+  meta_boxes:
+    - column_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - number
+          - lead
+          - related_book_id
+          - person_ids
+    - column_ssdb:
+        label: SSDB設定
+        context: normal
+        priority: low
+        fields:
+          - ssdb_link
+interview:
+  register_options:
+    labels:
+      name: インタビュー
+      add_new_item: インタビューを追加
+      edit_item: インタビューを編集
+    public: true
+    qeury_var: true
+    has_archive: true
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+    hierarchical: true
+  taxonomies:
+    - common_tag
+    - interview_category:
+        hierarchical: true
+        public: true
+        show_ui: true
+        label: インタビューシリーズ
+        qeury_var: true
+        custom_fields:
+          - interview_type:
+              label: インタビュータイプ
+              input: radio
+              values:
+                - plus: プラスインタビュー
+                - author: 著者インタビュー
+                - talk: 対談
+          - eye_catch:
+              label: アイキャッチ
+              input: image
+          - short_title:
+              label: 人名（連載一覧ページおよびサイドバーで表示）
+              input: text
+          - short_subtitle:
+              label: 肩書き（連載一覧ページおよびサイドバーで表示）
+              input: text
+          - latest_post_date:
+              label: 最終更新日時（配下のインタビュー記事が更新されたタイミングで自動更新）
+              input: text
+  custom_fields:
+    - lead:
+        label: サブタイトル
+        input: text
+        size: 80
+        style: "margin-left: 36px;"
+    - person_ids:
+        label: 人物プロフィール
+        input: text
+        size: 40
+        style: "margin-left: 10px;"
+    - related_book_id:
+        label: 関連書籍
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - ssdb_link:
+        label: 'SSDBに関連記事として'
+        input: radio
+        default: 1
+        values:
+          - 1: 登録する
+          - 0: 登録しない
+  columns_on_manage_screen:
+    show:
+      - interview_category:
+          label: インタビューシリーズ
+      - author:
+          label: 作成者
+      - post_approved:
+          label: 承認状態
+          display_values:
+            default: 未承認
+            1: 承認
+  meta_boxes:
+    - review_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - number
+          - lead
+          - person_ids
+          - related_book_id
+    - interview_ssdb:
+        label: SSDB設定
+        context: normal
+        priority: low
+        fields:
+          - ssdb_link
+movie:
+  register_options:
+    labels:
+      name: 動画
+      add_new_item: 動画を追加
+      edit_item: 動画を編集
+    public: true
+    has_archive: true
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+  taxonomies:
+    - common_tag
+  custom_fields:
+    - lead:
+        label: サブタイトル
+        input: text
+        size: 80
+        style: "margin-left: 36px;"
+    - person_ids:
+        label: 人物プロフィール
+        input: text
+        size: 40
+        style: "margin-left: 10px;"
+    - related_book_id:
+        label: 関連書籍
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - thumbnail_youtube_id:
+        label: サムネイルに用いるYouTube動画ID（トップページで使用）
+        input: text
+        size: 40
+    - ssdb_link:
+        label: 'SSDBに関連記事として'
+        input: radio
+        default: 1
+        values:
+          - 1: 登録する
+          - 0: 登録しない
+  meta_boxes:
+    - movie_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - lead
+          - person_ids
+          - related_book_id
+          - thumbnail_youtube_id
+    - movie_ssdb:
+        label: SSDB設定
+        context: normal
+        priority: low
+        fields:
+          - ssdb_link
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+      - post_approved:
+          label: 承認状態
+          display_values:
+            default: 未承認
+            1: 承認
+review:
+  register_options:
+    labels:
+      name: 書評
+      add_new_item: 書評を追加
+      edit_item: 書評を編集
+    public: true
+    has_archive: true
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+  taxonomies:
+    - common_tag
+  custom_fields:
+    - author_name:
+        label: 著者名
+        unique: true
+        input: text
+        size: 40
+        style: "margin-left: 75px;"
+    - person_ids:
+        label: 人物プロフィール
+        input: text
+        size: 40
+        style: "margin-left: 10px;"
+    - related_book_id:
+        label: 関連書籍
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - ssdb_link:
+        label: 'SSDBに関連記事として'
+        input: radio
+        default: 1
+        values:
+          - 1: 登録する
+          - 0: 登録しない
+  meta_boxes:
+    - review_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - author_name
+          - person_ids
+          - related_book_id
+    - review_ssdb:
+        label: SSDB設定
+        context: normal
+        priority: low
+        fields:
+          - ssdb_link
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+      - post_approved:
+          label: 承認状態
+          display_values:
+            default: 未承認
+            1: 承認
+information:
+  register_options:
+    labels:
+      name: インフォメーション
+      add_new_item: インフォメーションを追加
+      edit_item: インフォメーションを編集
+    public: true
+    has_archive: true
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+  taxonomies:
+    - common_tag
+  custom_fields:
+    - lead:
+        label: サブタイトル
+        input: text
+        size: 80
+        style: "margin-left: 36px;"
+    - person_ids:
+        label: 人物プロフィール
+        input: text
+        size: 40
+        style: "margin-left: 10px;"
+    - related_book_id:
+        label: 関連書籍
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - ssdb_link:
+        label: 'SSDBに関連記事として'
+        input: radio
+        default: 1
+        values:
+          - 1: 登録する
+          - 0: 登録しない
+  meta_boxes:
+    - information_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - lead
+          - person_ids
+          - related_book_id
+    - information_ssdb:
+        label: SSDB設定
+        context: normal
+        priority: low
+        fields:
+          - ssdb_link
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+      - post_approved:
+          label: 承認状態
+          display_values:
+            default: 未承認
+            1: 承認
+pickup:
+  register_options:
+    labels:
+      name: ピックアップ
+      add_new_item: ピックアップを追加
+      edit_item: ピックアップを編集
+    public: true
+    has_archive: false
+    supports:
+      - title
+      - author
+      - revisions
+  custom_fields:
+    - priority:
+        label: 表示順番
+        input: select
+        width: 40
+        values:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+        style: "margin-left: 22px;"
+    - link:
+        label: リンクURL
+        input: text
+        size: 120
+        style: "margin-left: 10px;"
+    - banner:
+        label: カルーセル/サイドバー用バナー
+        input: image
+  columns_on_manage_screen:
+    show:
+      - priority:
+          label: 表示順番
+      - author:
+          label: 作成者
+  sortable_columns:
+    - priority
+  meta_boxes:
+    - pickup_info:
+        label: ピックアップ情報
+        context: normal
+        priority: high
+        fields:
+          - priority
+          - link
+          - banner
+from_interview:
+  register_options:
+    labels:
+      name: インタビューより
+      add_new_item: インタビューよりを追加
+      edit_item: インタビューよりを編集
+    public: true
+    has_archive: false
+    supports:
+      - title
+      - author
+      - revisions
+  custom_fields:
+    - interview_id:
+        label: インタビューの記事ID
+        input: text
+        size: 20
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+  meta_boxes:
+    - from_interview_info:
+        label: インタビュー情報
+        context: normal
+        priority: high
+        fields:
+          - interview_id
+person:
+  register_options:
+    labels:
+      name: 人物プロフィール
+      add_new_item: '人物プロフィールを追加'
+    public: true
+    has_archive: false
+    supports:
+      - title
+      - editor
+      - thumbnail
+      - author
+      - revisions
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+related_book:
+  register_options:
+    labels:
+      name: 関連書籍
+      add_new_item: '関連書籍を追加'
+    public: true
+    has_archive: false
+    supports:
+      - title
+      - thumbnail
+      - author
+      - revisions
+  custom_fields:
+    - isbn:
+        label: ISBN
+        input: text
+        size: 40
+        style: "margin-left: 62px;"
+    - link:
+        label: 販売リンクURL
+        input: text
+        size: 120
+  columns_on_manage_screen:
+    show:
+      - author:
+          label: 作成者
+      - isbn:
+          label: ISBN
+  meta_boxes:
+    - news_info:
+        label: 基本情報
+        context: normal
+        priority: high
+        fields:
+          - isbn
+          - link

@@ -1,0 +1,34 @@
+div.static-post-type-inner-meta-box {
+	padding: 5px 0;
+}
+
+div.static-post-type-inner-meta-box textarea {
+	margin-top: 3px;
+}
+
+div.static-post-type-inner-meta-box label {
+	padding-right: 8px; 
+	vertical-align: middle;
+}
+
+div.static-post-type-inner-meta-box label.for-multiple-select,
+div.static-post-type-inner-meta-box label.for-textarea {
+	padding-right: 8px; 
+	vertical-align: top;
+}
+
+div.static-post-type-inner-meta-box label.for-radio-value,
+div.static-post-type-inner-meta-box label.for-checkbox-value {
+	padding-right: 15px; 
+	vertical-align: top;
+}
+
+div.static-post-type-inner-meta-box input[type=radio],
+div.static-post-type-inner-meta-box input[type=checkbox] {
+	margin-right: 5px;
+}
+
+p.static-post-type-description {
+	color: #999;
+	margin: 0 0 0 0;
+}
