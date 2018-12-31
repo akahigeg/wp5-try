@@ -14,5 +14,4 @@ RUN wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer 
 
 COPY devenv/config/wp-config.php /var/www/html/wp-config.php
 COPY devenv/config/php.ini /usr/local/etc/php/conf.d/php.ini
-COPY src/post-types.yml /var/www/html/post-types.yml
 COPY devenv/config/ssmtp.conf /etc/ssmtp/ssmtp.conf
